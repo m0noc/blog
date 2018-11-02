@@ -1,0 +1,11 @@
+# Original DNS server
+https://gist.github.com/andreif/6069838
+
+# harmj0y's DPAPI blog
+https://www.harmj0y.net/blog/redteaming/operational-guidance-for-offensive-user-dpapi-abuse/
+
+# DPAPImk2john.py
+https://github.com/Fist0urs/JohnTheRipper/tree/bleeding-jumbo/run
+
+# Use of python dnslib
+https://bitbucket.org/paulc/dnslib

